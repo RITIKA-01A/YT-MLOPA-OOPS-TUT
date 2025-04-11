@@ -1,0 +1,3 @@
+1. Class has data/attribute and functions
+    > attributes get called itself , methods are caleed manually
+2. Why python is called OOp - everything in python is an object(data structure , data type etc)
