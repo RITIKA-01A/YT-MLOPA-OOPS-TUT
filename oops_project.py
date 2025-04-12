@@ -1,9 +1,35 @@
 class chatbook:
+    # static variable 
+    __user_id = 0
+
     def __init__(self):
+        #print(id(self))
+        self.id = chatbook.__user_id
+        chatbook.__user_id += 1
+        self.__name = "default user" ## encapsulation --> hiding the datamember from direct access
         self.username = ''
         self.password = ''
         self.loggedin = False
-        self.menu()
+        #self.menu() 
+
+   ## getter to get the name of the encapsulated attribute "name"
+    def get_name(self):
+        print(self.__name) ## the encalpusu;aetd member cab be accessed without using ._chatbook__name.since it is within the clss
+
+    
+    def set_name(self , name):
+        self.__name = name
+    
+
+    @staticmethod
+    def get_id():
+        print(chatbook.__user_id)
+
+
+    @staticmethod
+    def set_id(id):
+        chatbook.__user_id = id
+        
 
 
     def menu(self):
@@ -75,6 +101,9 @@ class chatbook:
             print("You need to signin first to send a msg")
             self.menu()
 
+    def travel(self):
+        print("The employee is travelling to Delhi")
+
 
          
 
@@ -82,4 +111,12 @@ class chatbook:
 
 
 
+#obj1 = chatbook()
+#obj2 = chatbook()
+#print(id(obj1))
+#print(id(obj2))
+
 obj = chatbook()
+obj.name = "ritika" ## making attribute outside the clss
+print(obj.name)
+
